@@ -1,0 +1,95 @@
+
+/* ======== Responsive Styles ======== */
+.searchContainer {
+  max-width: 500px;
+  width: 100%;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
+
+.form {
+  .inputBox {
+    margin-bottom: 10px;
+
+    input {
+      width: 100%;
+      height: 48px;
+      padding: 0 12px;
+      color: rgb(221, 224, 228);
+      font-family: "Rubik", sans-serif;
+      font-size: 14px;
+      background-color: rgb(32, 43, 59);
+      border: none;
+      border-radius: 12px;
+      outline: none;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+
+      &:disabled {
+        background-color: #4c5a6a;
+        cursor: not-allowed;
+      }
+    }
+
+    .error {
+      color: #ff6b6b;
+      font-size: 13px;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+  }
+}
+
+.loader {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+    .inputBox {
+      input {
+        height: 44px;
+        font-size: 13px;
+      }
+
+      .error {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .form {
+    .inputBox {
+      input {
+        height: 40px;
+        font-size: 12px;
+      }
+
+      .error {
+        font-size: 11px;
+      }
+    }
+
+    .loader {
+      font-size: 18px;
+    }
+  }
+}

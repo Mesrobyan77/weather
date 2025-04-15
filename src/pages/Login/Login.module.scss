@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
+
+$primary-bg-color: #0b131e;
+$secondary-bg-color: #202b3b;
+$highlight-color: #0095ff;
+$hover-color: #3182ce;
+$text-color-light: #f0f1f1;
+$text-color-dark: #9399a2;
+$button-radius: 2rem;
+$max-width: 572px;
+
+.mainBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: $primary-bg-color;
+  padding: 60px;
+  height: 100vh;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.imageBox {
+  background-color: $secondary-bg-color;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: $max-width;
+  height: 680px;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    height: 400px;
+  }
+
+  @media (max-width: 480px) {
+    height: 300px;
+  }
+}
+
+.textBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: $max-width;
+  width: 100%;
+}
+
+.textBoxImg {
+  width: 96px;
+
+  @media (max-width: 480px) {
+    width: 72px;
+  }
+}
+
+.title {
+  color: $text-color-light;
+  font-size: 64px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 72px;
+
+  @media (max-width: 768px) {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.subtitle {
+  color: $text-color-dark;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+  line-height: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background-color: $highlight-color;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: $button-radius;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: $hover-color;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}

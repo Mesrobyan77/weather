@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap");
+
+$primary-bg-color: #0b131e;
+$secondary-bg-color: #202b3b;
+$highlight-color: #0095ff;
+$hover-color: #3182ce;
+$text-color-light: #f0f1f1;
+$button-radius: 2rem;
+
+
+.leftSideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 90px;
+  height: 100%;  
+  background-color: $secondary-bg-color;
+  border-radius: 24px;
+  padding: 20px 0;
+  font-family: "Rubik", sans-serif;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &.closed {
+    width: 70px;
+    height: 90vh;
+  }
+
+  &.open {
+    width: 220px;
+  }
+}
+
+.umbrella {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.leftSideBarbox {
+  a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: $text-color-light;
+    margin: 8px 0;
+    border-radius: $button-radius;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-color: $highlight-color;
+    }
+
+    span {
+      margin-left: 10px;
+      font-weight: 600;
+    }
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.menuButton {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  color: $text-color-light;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftSideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    transform: translateX(-100%);
+    &.open {
+      transform: translateX(0);
+    }
+    &.closed {
+      transform: translateX(-100%);
+    }
+  }
+}
