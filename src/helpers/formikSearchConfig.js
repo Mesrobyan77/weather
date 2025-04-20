@@ -32,3 +32,25 @@ export const useSearchFormConfig = (dispatch) => {
 
   return { validationSchema, handleSubmit, cooldown };
 };
+
+export const getUserPosition = () => {
+  return new Promise((resolve, reject) => {
+    if (!navigator.geolocation) {
+      reject("Geolocation is not supported by this browser.");
+    } else {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          resolve({
+            lat: position.coords.latitude,
+            lon: position.coords.longitude,
+          });
+        },
+        (error) => {
+          reject(error.message);
+        }
+      );
+    }
+  });
+};
+
+

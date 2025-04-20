@@ -12,7 +12,6 @@ import styles from "./LeftSideBar.module.scss";
 
 function LeftSideBar() {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (

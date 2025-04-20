@@ -9,24 +9,35 @@ export const weatherSlice = createSlice({
     forecast: [],
     loading: false,
     error: "",
-    history:[],
-    units:'metric'
+    history: [],
+    units: "metric",
+    location: true,
   },
   reducers: {
-    addToHistory(state,action){
-      state.history = [...state.history,action.payload]
+    addToHistory(state, action) {
+      const exists = state.history.some(
+        (item) => item.name.toLowerCase() === action.payload.name.toLowerCase()
+      );
+      if (!exists) {
+        state.history = [...state.history, action.payload];
+      }
     },
-    addUnit(state,action){
-      state.units = action.payload
-    }
+    addUnit(state, action) {
+      state.units = action.payload;
+    },
+    changeLocation(state) {
+      state.location = !state.location;
+    },
   },
   selectors: {
     getWeather: (state) => state.weather,
     getToday: (state) => state.today,
     getForecast: (state) => state.forecast,
-    getUnit:(state)=>state.units,
+    getUnit: (state) => state.units,
     getGlobal: (state) => state,
-    getHistory:(state)=>state.history
+    getHistory: (state) => state.history,
+    getLocation: (state) => state.location,
+    getLoading: (state) => state.loading,
   },
   extraReducers: (builder) => {
     builder
@@ -69,5 +80,14 @@ export const weatherSlice = createSlice({
 });
 
 export const weatherReducer = weatherSlice.reducer;
-export const {addToHistory} = weatherSlice.actions
-export const { getWeather, getForecast, getToday ,getGlobal,getUnit,getHistory} = weatherSlice.selectors;
+export const { addToHistory, changeLocation } = weatherSlice.actions;
+export const {
+  getWeather,
+  getForecast,
+  getToday,
+  getGlobal,
+  getUnit,
+  getHistory,
+  getLocation,
+  getLoading,
+} = weatherSlice.selectors;

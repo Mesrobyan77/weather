@@ -1,0 +1,146 @@
+.cites {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+  height: 620px;
+  max-width: 500px;
+  overflow: scroll;
+
+  .cityBox {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(18, 25, 36);
+    border-radius: 12px;
+    cursor: pointer;
+
+    .box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        width: 90px;
+        height: 90px;
+        border-radius: 16px;
+        object-fit: cover;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .citydecs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        .name {
+          font-size: 32px;
+          font-weight: 600;
+          font-family: Rubik;
+          color: #c4cad3;
+        }
+
+        .time {
+          font-size: 20px;
+          font-family: Rubik;
+          color: #9399a2;
+        }
+      }
+    }
+
+    .temp {
+      font-size: 40px;
+      font-family: Rubik;
+      color: #dde0e4ff;
+    }
+  }
+}
+
+/* RESPONSIVE PART */
+
+@media (max-width: 1024px) {
+  .cites {
+    height: auto;
+    max-width: 100%;
+
+    .cityBox {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 16px;
+
+      .box {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+
+        img {
+          width: 70px;
+          height: 70px;
+        }
+
+        .citydecs {
+          gap: 6px;
+
+          .name {
+            font-size: 26px;
+            line-height: 32px;
+          }
+
+          .time {
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+      }
+
+      .temp {
+        margin-top: 10px;
+        font-size: 32px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cites {
+    margin-top: 16px;
+    padding: 0 10px;
+
+    .cityBox {
+      flex-direction: column;
+      padding: 14px;
+
+      .box {
+        flex-direction: row;
+        gap: 14px;
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+
+        .citydecs {
+          gap: 4px;
+
+          .name {
+            font-size: 22px;
+            line-height: 28px;
+          }
+
+          .time {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+
+      .temp {
+        margin-top: 8px;
+        font-size: 28px;
+      }
+    }
+  }
+}
