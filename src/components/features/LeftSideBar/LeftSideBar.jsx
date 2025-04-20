@@ -45,7 +45,7 @@ function LeftSideBar() {
             }
             className={styles.unitButton}
           >
-            {unit === "C" ? "°F" : "°C"}
+            {unit === "metric" ? "°F" : "°C"}
           </button>
         </div>
       </div>
