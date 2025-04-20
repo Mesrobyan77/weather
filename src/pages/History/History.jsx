@@ -1,9 +1,9 @@
-import HistoryCity from '../../components/HistoryCity/HistoryCity';
-import styles from './History.module.scss'
-function History() { 
+import HistoryCity from "../../components/HistoryCity/HistoryCity";
+import styles from "./History.module.scss";
+function History() {
   return (
     <div className={styles.history}>
-        <HistoryCity/>
+      <HistoryCity />
     </div>
   );
 }

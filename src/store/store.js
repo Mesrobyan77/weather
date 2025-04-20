@@ -3,10 +3,10 @@ import { weatherReducer } from "./weatherSlice/weatherSlice";
 import { currentCityReducer } from "./weatherSlice/curetCitySlice";
 
 const store = configureStore({
-    reducer:{
-        data:weatherReducer,
-        curetCity:currentCityReducer
-    }
-})
+  reducer: {
+    data: weatherReducer,
+    curetCity: currentCityReducer,
+  },
+});
 
-export default store
+export default store;

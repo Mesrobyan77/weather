@@ -17,7 +17,7 @@
     opacity: 0;
     animation: fadeIn 1.5s ease forwards;
     animation-delay: 0.2s; /* Օգտագործելով սկզբնական ուշացում */
-    
+
     &:nth-child(odd) {
       animation: fadeIn 1.5s forwards;
       animation-delay: 0.3s; /* Ավելացնել ուշացում անհատական տարրերի համար */
@@ -54,7 +54,6 @@
     }
   }
 }
-
 
 @keyframes fadeIn {
   0% {

@@ -6,7 +6,7 @@ import styles from "./Today.module.scss";
 
 function Today() {
   const hourlyData = useSelector(getToday);
-  const unit = useSelector(getUnit)
+  const unit = useSelector(getUnit);
   const unitSymbol = unit === "imperial" ? "°F" : "°C";
   return (
     <div className={styles.today}>
@@ -19,7 +19,10 @@ function Today() {
               src={`http://openweathermap.org/img/wn/${hour?.weather[0].icon}.png`}
               alt={hour.weather[0].description}
             />
-            <span className={styles.temp}>{Math.round(hour?.main.temp)}{unitSymbol}</span>
+            <span className={styles.temp}>
+              {Math.round(hour?.main.temp)}
+              {unitSymbol}
+            </span>
           </div>
         ))}
       </div>

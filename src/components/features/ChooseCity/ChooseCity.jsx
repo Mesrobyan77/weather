@@ -1,13 +1,13 @@
-import React from 'react';
-import styles from './ChooseCity.module.scss';
-import {  useSelector } from 'react-redux';
-import { getCurrentCityData } from '../../../store/weatherSlice/curetCitySlice';
-import { formatTime, getDayName } from '../../../helpers/time';
-import { getUnit } from '../../../store/weatherSlice/weatherSlice';
+import React from "react";
+import styles from "./ChooseCity.module.scss";
+import { useSelector } from "react-redux";
+import { getCurrentCityData } from "../../../store/weatherSlice/curetCitySlice";
+import { formatTime, getDayName } from "../../../helpers/time";
+import { getUnit } from "../../../store/weatherSlice/weatherSlice";
 
 function ChooseCity() {
-  const {today,forecast} = useSelector(getCurrentCityData) 
-  const unit = useSelector(getUnit)
+  const { today, forecast } = useSelector(getCurrentCityData);
+  const unit = useSelector(getUnit);
   const unitSymbol = unit === "imperial" ? "°F" : "°C";
 
   return (
@@ -25,7 +25,7 @@ function ChooseCity() {
             />
           </div>
 
-           <div className={styles.today}>
+          <div className={styles.today}>
             <p>Today's Forecast</p>
             <div className={styles.todayWeather}>
               {today?.list?.slice(0, 3).map((hour, index) => (

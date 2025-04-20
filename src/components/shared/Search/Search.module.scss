@@ -1,4 +1,3 @@
-
 /* ======== Responsive Styles ======== */
 .searchContainer {
   max-width: 500px;
@@ -52,7 +51,8 @@
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { curentCityForecast, curetCityToday,} from "./api";
+import { curentCityForecast, curetCityToday } from "./api";
 
 export const currentCitySlice = createSlice({
   name: "curetCity",

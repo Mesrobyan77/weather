@@ -5,7 +5,6 @@ export const formatTime = (timestamp) => {
   return `${hours}:${minutes < 10 ? "0" + minutes : minutes}`;
 };
 
-
 export const getDayName = (index) => {
   const today = new Date();
   today.setDate(today.getDate() + index);
@@ -20,8 +19,3 @@ export const getDayName = (index) => {
   ];
   return daysOfWeek[today.getDay()];
 };
-
-
-
-
-

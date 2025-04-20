@@ -14,7 +14,7 @@ function HistoryCity() {
   const handleFilter = () => {
     const value = inpRef.current.value.toLowerCase();
     const filtered = history.filter((item) =>
-      item.name.toLowerCase().includes(value)
+      item.name.toLowerCase().includes(value),
     );
     setFilteredHistory(filtered);
   };
@@ -33,10 +33,9 @@ function HistoryCity() {
           />
           <div className={styles.smallDiv}>
             <City data={filteredHistory} />
-            <div style={{width:'500px'}}>
-            <ChooseCity/>
+            <div style={{ width: "500px" }}>
+              <ChooseCity />
             </div>
-            
           </div>
         </div>
       </div>

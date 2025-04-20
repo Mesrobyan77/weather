@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  cloudSun,
-  listTask,
-  sliders,
-  umbrella,
-} from "../../../costands/costands";
+import { cloudSun, listTask, umbrella } from "../../../costands/costands";
 import { Menu } from "lucide-react";
 import ROUTES from "../../../Router";
 import styles from "./LeftSideBar.module.scss";

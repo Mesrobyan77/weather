@@ -16,7 +16,7 @@ export const weatherSlice = createSlice({
   reducers: {
     addToHistory(state, action) {
       const exists = state.history.some(
-        (item) => item.name.toLowerCase() === action.payload.name.toLowerCase()
+        (item) => item.name.toLowerCase() === action.payload.name.toLowerCase(),
       );
       if (!exists) {
         state.history = [...state.history, action.payload];
@@ -80,7 +80,7 @@ export const weatherSlice = createSlice({
 });
 
 export const weatherReducer = weatherSlice.reducer;
-export const { addToHistory, changeLocation ,addUnit} = weatherSlice.actions;
+export const { addToHistory, changeLocation, addUnit } = weatherSlice.actions;
 export const {
   getWeather,
   getForecast,

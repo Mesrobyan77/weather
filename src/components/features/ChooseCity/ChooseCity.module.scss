@@ -34,7 +34,7 @@
     }
   }
 
-  .wrapper{
+  .wrapper {
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -168,7 +168,8 @@
       align-items: center;
       text-align: center;
 
-      h2, span {
+      h2,
+      span {
         font-size: 32px;
         line-height: 40px;
       }

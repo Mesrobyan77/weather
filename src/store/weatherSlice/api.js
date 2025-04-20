@@ -17,12 +17,11 @@ export const fetchWeather = createAsyncThunk(
       return res.data;
     } catch (error) {
       return rejectWithValue(
-        error.response?.data?.message || "Error fetching weather"
+        error.response?.data?.message || "Error fetching weather",
       );
     }
-  }
+  },
 );
-
 
 export const today = createAsyncThunk(
   "data/today",
@@ -36,10 +35,10 @@ export const today = createAsyncThunk(
       return res.data;
     } catch (error) {
       return rejectWithValue(
-        error.response?.data?.message || "Error fetching today's weather"
+        error.response?.data?.message || "Error fetching today's weather",
       );
     }
-  }
+  },
 );
 
 export const forecast = createAsyncThunk(
@@ -54,10 +53,10 @@ export const forecast = createAsyncThunk(
       return res.data;
     } catch (error) {
       return rejectWithValue(
-        error.response?.data?.message || "Error fetching forecast"
+        error.response?.data?.message || "Error fetching forecast",
       );
     }
-  }
+  },
 );
 
 export const curetCityToday = createAsyncThunk(
@@ -72,10 +71,10 @@ export const curetCityToday = createAsyncThunk(
       return res.data;
     } catch (error) {
       return rejectWithValue(
-        error.response?.data?.message || "Error fetching today's weather"
+        error.response?.data?.message || "Error fetching today's weather",
       );
     }
-  }
+  },
 );
 
 export const curentCityForecast = createAsyncThunk(
@@ -90,8 +89,8 @@ export const curentCityForecast = createAsyncThunk(
       return res.data;
     } catch (error) {
       return rejectWithValue(
-        error.response?.data?.message || "Error fetching forecast"
+        error.response?.data?.message || "Error fetching forecast",
       );
     }
-  }
+  },
 );
