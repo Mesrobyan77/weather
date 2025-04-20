@@ -33,7 +33,7 @@ function Search() {
     };
 
     fetchInitialData();
-  }, [dispatch]);
+  }, [dispatch,unit,position]);
 
   return (
     <div className={styles.searchContainer}>

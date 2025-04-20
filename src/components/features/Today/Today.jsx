@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
-import { getToday } from "../../../store/weatherSlice/weatherSlice";
+import { getToday, getUnit } from "../../../store/weatherSlice/weatherSlice";
 import { formatTime } from "../../../helpers/time";
 
 import styles from "./Today.module.scss";
 
 function Today() {
   const hourlyData = useSelector(getToday);
+  const unit = useSelector(getUnit)
+  const unitSymbol = unit === "imperial" ? "°F" : "°C";
   return (
     <div className={styles.today}>
       <p>Today's Forecast</p>
@@ -17,7 +19,7 @@ function Today() {
               src={`http://openweathermap.org/img/wn/${hour?.weather[0].icon}.png`}
               alt={hour.weather[0].description}
             />
-            <span className={styles.temp}>{Math.round(hour?.main.temp)}°</span>
+            <span className={styles.temp}>{Math.round(hour?.main.temp)}{unitSymbol}</span>
           </div>
         ))}
       </div>

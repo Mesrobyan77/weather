@@ -2,13 +2,16 @@ import styles from "./AirCondition.module.scss";
 import wind from "../../../assets/icons/wind.svg";
 import temp from "../../../assets/icons/temp.svg";
 import { useSelector } from "react-redux";
-import { getWeather } from "../../../store/weatherSlice/weatherSlice";
+import { getWeather, getUnit } from "../../../store/weatherSlice/weatherSlice";
 
 function AirCondition() {
-  const weather = useSelector(getWeather)
+  const weather = useSelector(getWeather);
+  const unit = useSelector(getUnit);
+
   const realFeel = weather?.main?.feels_like?.toFixed(1);
   const windSpeed = weather?.wind?.speed?.toFixed(1);
-  const unitSymbol = weather?.unit === "imperial" ? "°F" : "°C";
+  const unitSymbol = unit === "imperial" ? "°F" : "°C";
+
   return (
     <div className={styles.airCondition}>
       <h2>Air conditions</h2>

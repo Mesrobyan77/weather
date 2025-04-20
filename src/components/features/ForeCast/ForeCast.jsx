@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./Forecast.module.scss";
 import { useSelector } from "react-redux";
-import { getForecast } from "../../../store/weatherSlice/weatherSlice";
+import { getForecast, getUnit } from "../../../store/weatherSlice/weatherSlice";
 import {getDayName} from '../../../helpers/time'
 function Forecast() {
   const groupedData = useSelector(getForecast);
-
+  const unit = useSelector(getUnit)
+  const unitSymbol = unit === "imperial" ? "°F" : "°C";
   return (
     <div className={styles.forecast}>
       <h2>6 Day Forecast</h2>
@@ -22,7 +23,7 @@ function Forecast() {
             />
             <span>{day.weather[0].description}</span>
           </div>
-          <span>{day.main.temp.toFixed(1)}°C</span>
+          <span>{day.main.temp.toFixed(1)}{unitSymbol}</span>
         </div>
         ))}
       </div>

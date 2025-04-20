@@ -80,7 +80,7 @@ export const weatherSlice = createSlice({
 });
 
 export const weatherReducer = weatherSlice.reducer;
-export const { addToHistory, changeLocation } = weatherSlice.actions;
+export const { addToHistory, changeLocation ,addUnit} = weatherSlice.actions;
 export const {
   getWeather,
   getForecast,

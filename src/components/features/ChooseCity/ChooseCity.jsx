@@ -3,9 +3,13 @@ import styles from './ChooseCity.module.scss';
 import {  useSelector } from 'react-redux';
 import { getCurrentCityData } from '../../../store/weatherSlice/curetCitySlice';
 import { formatTime, getDayName } from '../../../helpers/time';
+import { getUnit } from '../../../store/weatherSlice/weatherSlice';
 
 function ChooseCity() {
   const {today,forecast} = useSelector(getCurrentCityData) 
+  const unit = useSelector(getUnit)
+  const unitSymbol = unit === "imperial" ? "°F" : "°C";
+
   return (
     <div className={styles.MainBox}>
       {today ? (
@@ -13,7 +17,7 @@ function ChooseCity() {
           <div className={styles.about}>
             <div>
               <h2>{today?.city?.name}</h2>
-              <span>{`${Math.round(today?.list?.[0]?.main.temp)}°`}</span>
+              <span>{`${Math.round(today?.list?.[0]?.main.temp)}${unitSymbol}`}</span>
             </div>
             <img
               src={`http://openweathermap.org/img/wn/${today?.list?.[0]?.weather?.[0]?.icon}.png`}
@@ -33,7 +37,7 @@ function ChooseCity() {
                   />
                   <span className={styles.temp}>
                     {hour?.main?.temp
-                      ? `${Math.round(hour.main.temp)}°`
+                      ? `${Math.round(hour.main.temp)}${unitSymbol}`
                       : "N/A"}
                   </span>
                 </div>

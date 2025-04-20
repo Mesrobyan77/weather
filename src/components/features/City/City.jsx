@@ -1,10 +1,13 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { formatTime } from "../../../helpers/time";
 import styles from "./City.module.scss";
 import { curentCityForecast, curetCityToday, } from "../../../store/weatherSlice/api";
+import { getUnit } from "../../../store/weatherSlice/weatherSlice";
 
 function City({data}) { 
   const dispatch = useDispatch() 
+  const unit = useSelector(getUnit)
+  const unitSymbol = unit === "imperial" ? "°F" : "°C";
   return (
     <div className={styles.cites}>
       {data?.length > 0 ? (
@@ -29,7 +32,7 @@ function City({data}) {
               </div>
             </div>
             <span className={styles.temp}>
-              {item?.main?.temp ? `${Math.round(item.main.temp)}°C` : null}
+              {item?.main?.temp ? `${Math.round(item.main.temp)}${unitSymbol}` : null}
             </span>
           </div>
         ))
