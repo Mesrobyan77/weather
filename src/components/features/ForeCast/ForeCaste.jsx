@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { getForecast, getUnit } from "../../../store/weatherSlice/weatherSlice";
 import { getDayName } from "../../../helpers/time";
 
-import styles from "./Forecast.module.scss";
+import styles from "./Forecaste.module.scss";
 function Forecast() {
   const groupedData = useSelector(getForecast);
   const unit = useSelector(getUnit);

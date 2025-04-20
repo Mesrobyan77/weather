@@ -5,7 +5,7 @@ import Search from "../../shared/Search/Search";
 import Location from "../Location/Location";
 import Today from "../Today/Today";
 import AirCondition from "../AirCondition/AirCondition";
-import ForeCast from "../ForeCast/ForeCast";
+import ForeCast from "../ForeCast/ForeCaste";
 
 function CityData() {
   return (
